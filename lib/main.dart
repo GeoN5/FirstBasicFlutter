@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/cupertino_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,7 +43,16 @@ class _HelloPageState extends State<HelloPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(_message,style: TextStyle(fontSize: 30)),
-                Text('$_counter',style: TextStyle(fontSize: 30))
+                Text('$_counter',style: TextStyle(fontSize: 30)),
+                RaisedButton(
+                  child: Text('화면 이동'),
+                  onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => CupertinoPage())
+                    );
+                  },
+                )
               ],
             )
         )
